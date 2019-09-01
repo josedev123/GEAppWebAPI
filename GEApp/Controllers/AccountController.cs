@@ -16,9 +16,12 @@ using Microsoft.Owin.Security.OAuth;
 using GEApp.Models;
 using GEApp.Providers;
 using GEApp.Results;
+using System.Web.Http.Cors;
 
 namespace GEApp.Controllers
 {
+    [EnableCors(origins: "*",
+    headers: "accept,content-type,origin,x-my-header", methods: "*")]
     [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
